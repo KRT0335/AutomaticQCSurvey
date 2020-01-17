@@ -32,6 +32,8 @@ public class Survey {
 	public WebElement comment;
 	@FindBy(xpath="//textarea[@aria-label='Any overall feedback (Training / Trainer / QC)']")
 	public WebElement feedback;
+	@FindBy(xpath="//span[text()='Submit']")
+	public WebElement noGoingBack;
 	
 	public Survey(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -112,5 +114,6 @@ public class Survey {
 				+ "░█░░░░░░░░░░░░░░░░░░░█░");
 		this.feedback.clear();
 		this.feedback.sendKeys("aaaaaaaaaaaaaaa");
+		this.nogoingBack.click();
 	}
 }
